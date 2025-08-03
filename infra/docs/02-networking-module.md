@@ -322,4 +322,4 @@ aws ec2 describe-route-tables --filters "Name=vpc-id,Values=vpc-xxxxxxxxx"
 ```
 
 ## Next Step
-Proceed to [Security Module](../../docs/03-security-module.md) to create security groups and network access controls.
+Proceed to [Security Module](03-security-module.md) to create security groups and network access controls.
