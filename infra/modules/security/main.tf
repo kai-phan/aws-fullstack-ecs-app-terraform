@@ -1,0 +1,24 @@
+resource "aws_security_group" "sg" {
+  name = var.name
+  description = var.description
+  vpc_id = var.vpc_id
+
+  ingress {
+    protocol = "tcp"
+    from_port = var.ingress_port
+    to_port = var.ingress_port
+    cidr_blocks = var.cidr_blocks_ingress
+    security_groups = var.security_groups
+  }
+
+  egress {
+    protocol = "-1"
+    from_port = var.egress_port
+    to_port = var.egress_port
+    cidr_blocks = var.cidr_blocks_egress
+  }
+
+  tags = merge(var.tags, {
+    Name = "${var.environment_name}-${var.name}-sg"
+  })
+}
